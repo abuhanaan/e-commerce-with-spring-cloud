@@ -1,0 +1,11 @@
+spring:
+  data:
+    mongodb:
+      username: mustopha
+      password: ayinde_99
+      host: localhost
+      port: 5003
+      authentication-database: admin
+      database: customer
+server:
+  port: 8090
