@@ -37,8 +37,8 @@ services:
     volumes:
       - mongo:/data
     environment:
-      - MONGO_INITDB_ROOT_USERNAME = mustopha
-      - MONGO_INITDB_ROOT_PASSWORD = ayinde_99
+      - MONGO_INITDB_ROOT_USERNAME=mustopha
+      - MONGO_INITDB_ROOT_PASSWORD=ayinde_99
 
   mongo-express:
     image: mongo-express
