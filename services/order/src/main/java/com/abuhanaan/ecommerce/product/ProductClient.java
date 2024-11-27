@@ -1,11 +1,11 @@
-package com.abuhanaan.ecommerce.order.product;
+package com.abuhanaan.ecommerce.product;
 
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 import com.abuhanaan.ecommerce.order.exception.BusinessException;
-import com.abuhanaan.ecommerce.order.product.request.PurchaseRequest;
-import com.abuhanaan.ecommerce.order.product.response.PurchaseResponse;
+import com.abuhanaan.ecommerce.product.request.PurchaseRequest;
+import com.abuhanaan.ecommerce.product.response.PurchaseResponse;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,7 +13,6 @@ import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;

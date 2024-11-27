@@ -1,7 +1,7 @@
 package com.abuhanaan.ecommerce.order.model.request;
 
 import com.abuhanaan.ecommerce.order.model.constant.PaymentMethod;
-import com.abuhanaan.ecommerce.order.product.request.PurchaseRequest;
+import com.abuhanaan.ecommerce.product.request.PurchaseRequest;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import jakarta.validation.constraints.NotBlank;

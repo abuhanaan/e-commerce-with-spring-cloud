@@ -1,4 +1,4 @@
-package com.abuhanaan.ecommerce.order.product.request;
+package com.abuhanaan.ecommerce.product.request;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;

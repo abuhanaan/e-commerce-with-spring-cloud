@@ -1,4 +1,4 @@
-package com.abuhanaan.ecommerce.order.product.response;
+package com.abuhanaan.ecommerce.product.response;
 
 import java.math.BigDecimal;
 
