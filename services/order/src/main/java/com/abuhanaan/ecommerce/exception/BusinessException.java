@@ -1,4 +1,4 @@
-package com.abuhanaan.ecommerce.order.exception;
+package com.abuhanaan.ecommerce.exception;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotEmpty;

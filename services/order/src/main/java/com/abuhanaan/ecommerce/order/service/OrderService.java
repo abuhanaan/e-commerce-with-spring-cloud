@@ -3,7 +3,7 @@ package com.abuhanaan.ecommerce.order.service;
 import com.abuhanaan.ecommerce.customer.CustomerClient;
 import com.abuhanaan.ecommerce.kafka.OrderConfirmation;
 import com.abuhanaan.ecommerce.kafka.OrderProducer;
-import com.abuhanaan.ecommerce.order.exception.BusinessException;
+import com.abuhanaan.ecommerce.exception.BusinessException;
 import com.abuhanaan.ecommerce.order.model.entity.Order;
 import com.abuhanaan.ecommerce.order.model.request.OrderRequest;
 import com.abuhanaan.ecommerce.order.model.response.OrderResponse;

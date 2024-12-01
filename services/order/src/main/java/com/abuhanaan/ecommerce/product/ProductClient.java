@@ -3,7 +3,7 @@ package com.abuhanaan.ecommerce.product;
 import static org.springframework.http.HttpHeaders.CONTENT_TYPE;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
-import com.abuhanaan.ecommerce.order.exception.BusinessException;
+import com.abuhanaan.ecommerce.exception.BusinessException;
 import com.abuhanaan.ecommerce.product.request.PurchaseRequest;
 import com.abuhanaan.ecommerce.product.response.PurchaseResponse;
 import java.util.List;
