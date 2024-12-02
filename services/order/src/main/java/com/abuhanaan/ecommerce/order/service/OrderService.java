@@ -1,12 +1,15 @@
 package com.abuhanaan.ecommerce.order.service;
 
 import com.abuhanaan.ecommerce.customer.CustomerClient;
+import com.abuhanaan.ecommerce.customer.response.CustomerResponse;
 import com.abuhanaan.ecommerce.kafka.OrderConfirmation;
 import com.abuhanaan.ecommerce.kafka.OrderProducer;
 import com.abuhanaan.ecommerce.exception.BusinessException;
 import com.abuhanaan.ecommerce.order.model.entity.Order;
 import com.abuhanaan.ecommerce.order.model.request.OrderRequest;
 import com.abuhanaan.ecommerce.order.model.response.OrderResponse;
+import com.abuhanaan.ecommerce.payment.PaymentClient;
+import com.abuhanaan.ecommerce.payment.request.PaymentRequest;
 import com.abuhanaan.ecommerce.product.ProductClient;
 import com.abuhanaan.ecommerce.product.request.PurchaseRequest;
 import com.abuhanaan.ecommerce.product.response.PurchaseResponse;
@@ -29,9 +32,10 @@ public class OrderService {
   private final OrderMapper mapper;
   private final OrderLineService orderLineService;
   private final OrderProducer orderProducer;
+  private final PaymentClient paymentClient;
 
   public Integer createOrder(@Valid OrderRequest request) {
-    var customer = customerClient.findCustomerById(request.customerId())
+    CustomerResponse customer = customerClient.findCustomerById(request.customerId())
         .orElseThrow(() -> new BusinessException(String.format(
             "Cannot create Order:: No customer exist with the provided Id %s", request.customerId()
         )));
@@ -42,7 +46,9 @@ public class OrderService {
             purchaseRequest.productId(), purchaseRequest.quantity()));
     }
 
-//    todo: start payment process
+    PaymentRequest paymentRequest = new PaymentRequest(request.amount(), request.paymentMethod(),
+        order.getId(), order.getReference(), customer);
+    paymentClient.requestOrderPayment(paymentRequest);
 
     orderProducer.sendOrderConfirmation(new OrderConfirmation(request.reference(), request.amount(),
         request.paymentMethod(), customer, purchasedProducts));
