@@ -21,7 +21,7 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 public class ProductClient {
 
-  @Value("${application.config.product-url}")
+  @Value("${spring.application.config.product-url}")
   private String productUrl;
   private final RestTemplate restTemplate;
 
@@ -32,7 +32,7 @@ public class ProductClient {
     ParameterizedTypeReference<List<PurchaseResponse>> responseType =
         new ParameterizedTypeReference<>() {};
     ResponseEntity<List<PurchaseResponse>> responseEntity = restTemplate.exchange(
-        productUrl + "/purchaseProducts", HttpMethod.POST, requestEntity, responseType);
+        productUrl + "/purchase", HttpMethod.POST, requestEntity, responseType);
     if (responseEntity.getStatusCode().isError()) {
       throw new BusinessException("An error occurred while processing the product purchase: " + responseEntity.getStatusCode());
     }

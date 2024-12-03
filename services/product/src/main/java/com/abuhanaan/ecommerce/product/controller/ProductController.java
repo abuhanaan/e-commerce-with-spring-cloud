@@ -30,11 +30,11 @@ public class ProductController {
     return ResponseEntity.ok(service.createProduct(request));
   }
 
-//  @PostMapping("/purchase")
-//  public ResponseEntity<List<ProductPurchaseResponse>> purchaseProducts(
-//      @RequestBody List<ProductPurchaseRequest> request) {
-//    return ResponseEntity.ok(service.purchaseProducts(request));
-//  }
+  @PostMapping("/purchase")
+  public ResponseEntity<List<ProductPurchaseResponse>> purchaseProducts(
+      @RequestBody List<ProductPurchaseRequest> request) {
+    return ResponseEntity.ok(service.purchaseProducts(request));
+  }
 
   @GetMapping("/{product-id}")
   public ResponseEntity<ProductResponse> findById(@PathVariable("product-id") Integer productId) {
